@@ -1,0 +1,63 @@
+<header class="page-footer font-small cyan darken-3">
+  <div class="footer-copyright text-left p-3 bg-primary text-white fw-bold">WELCOME
+  </div></header><br>
+<div class="my-form">
+  <div class="card-body">
+    <form>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name" (keyup)="setFirstname($event)" required>
+          </div>
+          <div class="col">
+            <input type="text1" class="form-control" placeholder="Last name" (keyup)="setLastname($event)">
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text2" class="form-control" placeholder="Username" (keyup)="setUsername($event)">
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="password" type="password" placeholder="Enter Password" (keyup)="setPassword($event)">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" (change)="setCheck($event)">I agree to the terms and conditions.
+        </div><br>
+        <button type="button" class="btn" id="submitBtn" (click)="displaydata()">REGISTER</button><br><br>
+        <input class="btn-danger" type="button" value="Reset" onclick="reset()">
+    </form>
+  </div><br>
+  <div class="container">
+    <div class="data-display" [class]="!display ? 'disable' : 'enable' ">
+      <table class="table table-success w-auto">
+        <caption>Registered users</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">T&C Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{text}}</th>
+          
+            <th scope="row">{{text1}}</th>
+
+            <th scope="row">{{text2 | lowercase}}</th>
+          
+            <th scope="row">{{password}}</th>
+          
+            <th scope="row">{{check}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+</div>
+<footer class="page-footer font-small cyan darken-3">
+  <div class="footer-copyright text-center p-3 bg-dark text-white">©Copyrights
+  </div>
+</footer>
+  
+
+
